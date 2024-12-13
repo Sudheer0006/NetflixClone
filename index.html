@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.nav-item {
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+}
+
+.bg-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 00.6)), url(https://springboard-cdn.appadvice.com/wp-content/appadvice-v2-media/2016/11/Netflix-background_860c8ece6b34fb4f43af02255ca8f225.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.logo h1 {
+    color: red;
+    font-size: 40px;
+    padding: 10px;
+}
+button[type="signin"] {
+    background-color: red;
+    border: none;
+    margin: 10px;
+    padding: 9px;
+    width: 80px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: inherit;
+}
+.language {
+    padding: 10px;
+    color: white;
+}
+select {
+    padding: 5px;
+    color: white;
+    background-color: transparent;
+    border-radius: 10px;
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid white;
+    font-family: inherit;
+}
+
+ /* .main {
+    font-size: px;
+}   */
+
+.content {
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+}
+
+.price {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+}
+
+.membership {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+}
+input[type="email"] {
+    color: white;
+    margin-left: 360px;
+    padding: 10px;
+    width: 35%;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid white;
+    background-color: transparent;
+    font-size: 20px;
+}
+input[type="email"]::placeholder {
+    color: white;
+    font-size: 20px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+}
+button[type="get-started"] {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-left: 8px;
+    border-radius: 15px;
+    width: 15%;
+    height: 52px;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.down{
+    background-color: black;
+    height: 20vh;
+    width: 30vh;
+}
+ /* .clip {
+    clip-path: polygon(50% 84%, 0 100%, 100% 100%);
+    height: 30px;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    bottom: 0; } */
+
+
+select:hover {
+    background-color: gray;
+    color: white;
+}
+
+.select-box {
+    appearance: none;
+}
+
+.caret {
+    margin-top: -22px;
+    left: 90px;
+    position: relative;
+}
+
+.signin a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.card {
+    margin: 155px;
+}
+
+.card-inner {
+    display: flex;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.cards {
+    width: 300px;
+    height: 280px;
+    border: 2px solid white;
+    border-radius: 15px;
+    border: none;
+    margin: auto;
+    background: linear-gradient(130deg, rgba(120, 0, 0, 0.8), rgba(0, 0, 120, 0.7));
+
+}
+
+.cards h2 {
+    font-size: 30px;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.cards p {
+    font-size: 18px;
+    font-family: inherit;
+}
+
+.cards-content {
+    margin: 20px;
+}
+
+.default-ltr-cache-1nu0xuw {
+    margin-top: 30px;
+    position: absolute;
+    margin-left: 180px;
+}
+
+.icon {
+    margin-top: -15px;
+    position: absolute;
+    margin-left: 185px;
+}
+
+.card h1 {
+    padding-top: 30px;
+}
+
+
+.img-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    padding: 10px;
+    max-width: 100vw;
+}
+
+.img-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.imgs {
+    width: 250px;
+    border-radius: 10px;
+    height: 300px;
+    background-size: cover;
+    flex: 0 0 auto;
+    transition: transform 0.6s ease ;
+   
+
+}
+.imgs:hover{
+    transform: scale(0.9);
+}
+
+.img1 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABV08j_6IdtOwMPV39S0jqAub7E2NfwSS0901SSXW6vuUWoXU41iJfo9i1PkMsd88oPeigxFTOCXM7LVsgkTWo6VM6llohGIF5KiB.jpg?r=680);
+    background-size: cover;
+    width: 250px;
+    height: 300px; 
+     
+}
+
+
+.img2 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABQbS4CFZ-ufswkyGOpUrO3xzpd-AHfvF5RYWvv-uTYkQ9RPc_GUUpMic_R21X7ydL5k2EfTjabfTcUjHAEnF2_T9Pj9Vz3eqmaTLgr5ObZ6Vc18diYS_nwoJDRplzvko7cHDJg.jpg?r=cf5);
+}
+
+.img3 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABYiowNzOzXhM56bbxzKXz2sbZcC9H8Uv4QmObuwHz2-9O5hMitSn3kiESvHpNH0eYEwAeC4omrHT_mbBcUJP1gZmi7SqGvZzv8LKQ_iB1rdYkRMRSMUaV8VFGjmYXkPcz6YHZA.jpg?r=a4e);
+}
+
+.img4 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABUGpx3KxK2GUQHQ68HtOJwC_br8NN8L-bPkpuY5VHuQWULJQqrPWZHEY3BkVkdShzUFqfO3UsANsuCctXTMkkxu2yBa83fV66Vse.jpg?r=f45);
+}
+
+.img5 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABT0zkn5cDQBdKryll-W8tDB2aGmk2gMrKrrLek1uz6P2y53EqQ7R1suc1jiB4piCsWPwzJwEJtPchx_uf_V2KFpaotwlHbhUf7lk.jpg?r=4e6);
+}
+
+.img6 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABSZetRg7uO-n2r67n40PjPqJ1RmMBP_Tm7vvR3qwsMsi1k28jp-2CUIP9zC2Vs0Ktyr14ibpK6fVvO1QcqoB_yLhkFxGhw0wxl8Y.jpg?r=c25);
+}
+
+.img7 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABZvdE7xbUeSaHOsLWwK8scFGhMjGIvWSxiymsz0uRw_6sEXJEtIOwcM9J6x2a_fQ7z4APRpkxm5rsxoZtzzjqplrWIWsC0EDQGRn.jpg?r=0f6);
+}
+
+.img8 {
+    background-image: url(https://occ-0-6245-2164.1.nflxso.net/dnm/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABR-OeORIMDtzIeXeHBbNYp1fefHOuIc7lazPT0HiuXyqW4BU_uK6KqMAYGZObOaZFNC2mWwvBbUPX103oRPI2Q_WNdhWkoo7JM1M.jpg?r=17c);
+}
+
+.img1 span,
+.img2 span,
+.img3 span,
+.img4 span,
+.img5 span,
+.img6 span,
+.img7 span,
+.img8 span {
+    top: 55%;
+    left: -6%;
+    font-weight: bold;
+    font-size: 90px;
+    position: relative;
+    -webkit-text-stroke: 0.25rem rgb(255, 255, 255);
+    text-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+    color: black;
+}
+.clip {
+    clip-path: polygon(50% 84%, 0 100%, 100% 100%);
+    height: 30px;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    bottom: 0;}
+
+.bottom-head{
+    display: flex;
+}
+.head-1{
+    
+    height: 190px;
+    width: 410px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: linear-gradient(140deg, rgba(120, 0, 0, 0.8), rgba(0, 0, 120, 0.7));
+    color:white;
+    font-size: 20px;
+    padding-left: 20px;
+    /* text-align: center; */
+
+}
+.head-2{
+    
+    height: 190px;
+    width: 410px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: linear-gradient(140deg, rgba(120, 0, 0, 0.8), rgba(0, 0, 120, 0.7));
+    color:white;
+    padding-left: 10px;
+    font-size: 20px;
+
+}
+.head-3{
+    
+    height: 190px;
+    width: 410px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: linear-gradient(140deg, rgba(120, 0, 0, 0.8), rgba(0, 0, 120, 0.7));
+    color:white;
+    padding-left:10px ;
+    font-size: 20px;
+
+}
+.head-4{
+    
+    height: 190px;
+    width: 410px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: linear-gradient(140deg, rgba(120, 0, 0, 0.8), rgba(0, 0, 120, 0.7));
+    color:white;
+    padding-left: 5px;
+    font-size: 20px;
+
+}
+ /* .faq-box{
+    align-items: center;
+    height: 10px;
+    width: 1500px;
+    color: white;
+    display: flex;
+    background-color: gray;
+    padding: 34px;
+    font-size: 30px;
+    margin: auto;
+    justify-content: space-between;
+    cursor: pointer;
+    
+} */
+ .bottom-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+    
+.faq-box{
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(105, 101, 101);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: auto;
+    align-items: center;
+    cursor: pointer;
+    
+} 
+.faq-box:hover{
+    background-color: rgb(60, 58, 58);
+
+}
+.end-footer{
+    
+    display: flex;
+    gap: 200px; 
+}
+ul{
+    list-style-type: none;
+    
+}
+a{
+    color: rgb(196, 191, 191);
+}
+
+
+ /* @media( min-width:200px)and (max-width:600px){
+    .head-1,.head-2,.head-3,.head-4{
+        font-size: 10px ;
+       
+    }
+}
+@media( min-width:200px)and (max-width:600px){
+    .bottom-head{
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+}  */
+
+
+
+    </style>
+    
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="logo">
+                <img src="https://cdn.geekwire.com/wp-content/uploads/2014/07/Netflix_Logo_Print_FourColorCMYK.png" width="400px" height="100px" alt="">
+            </div>
+            <div class="nav-item">
+                <div class="language">
+                    <select name="" id="" class="select-box">
+                        <option class="opt" value="">English</option>
+                        <option class="opt">हिंदी</option>
+                    </select>
+                </div>
+                <div class="signin">
+                    <button type="signin"><a href="amazonRegister.html" target="_blank"
+                            style="text-decoration: none; color: white;">Sign In</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <p class="content">Unlimited movies,<br> TV shows and<br> more</p>
+            <p class="price">Starts at ₹149. Cancel at any time.</p>
+            <p class="membership">Ready to watch? Enter your email to create or restart your membership.</p>
+            <input type="email" placeholder="Enter Your E-mail">
+            <button type="get-started">Get Started</button>
+        </div>
+        <!-- Next-Content   -->
+        
+         <div class="clip"></div>
+        <div class="card">
+            <h1>Trending Now</h1>
+            <div class="img-carousel">
+                <div class="img1 imgs">
+                    <span>1</span>
+                </div>
+                <div class="img2 imgs">
+                    <span>2</span>
+                </div>
+                <div class="img3 imgs">
+                    <span>3</span>
+                </div>
+                <div class="img4 imgs">
+                    <span>4</span>
+                </div>
+                <div class="img5 imgs">
+                    <span>5</span>
+                </div>
+                <div class="img6 imgs">
+                    <span>6</span>
+                </div>
+                <div class="img7 imgs">
+                    <span>7</span>
+                </div>
+                <div class="img8 imgs">
+                    <span>8</span>
+                </div>
+            </div>
+            <h2>More Reason to join</h2>
+            <div class="bottom-head">
+                <div class="head-1">
+                    <h3>Enjoy on your TV</h3>
+                    <p>watch on smart TV's,Playstation,<br>Xbox,Chromecast, Apple TV, Bluraybrplayers and more.</p>
+                    <span><img src="" alt=""></span>
+                </div>
+                <div class="head-2">
+                    <h3>Download your shows to watch offline</h3>
+                    <p>save ypur favourities easily and always have something to watch.</p>
+                </div>
+                <div class="head-3"><h3>Watch everywhere</h3>
+                <p>steam unlimited movies and TV<br/>shows on your phone,tablet,laptop and TV.</p></div>
+                <div class="head-4"><h3>Create profile for kids</h3>
+                <p>Send kids on adventures with their <br>favourite charcters in a space <br> made just for them--free with your <br> membership.</p></div>
+            </div>
+            <!-- footer -->
+             <div class="footer">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-box">What is Netflix?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></div>
+                &nbsp;
+                <div class="faq-box">How much does Netflix cost?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> </div>
+                &nbsp;
+                <div class="faq-box">Where can I watch?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> </div>
+                &nbsp;
+                <div class="faq-box">How do I cancel?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> </div>
+                &nbsp;
+                <div class="faq-box">What can I watch on Netflix? </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> </div>
+                &nbsp;
+                <div class="faq-box">is Netflix good kids?</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="29" height="29" color="#000000" fill="white">
+                        <path d="M12 4V20M20 12H4" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg> </div>
+                &nbsp;
+             </div>
+             <!-- end-footer -->
+             <div class="end-footer">
+                <div class="ul-1">
+                    <ul >
+                        <div>Questions? Call- <a href="">000-800-919-1694</a></div><br>
+                        <li><a href="#" >FAQ</a></li><br>
+                        <li><a href="">Investor Relations</a></li><br>
+                        <li><a href="">Privacy</a></li><br>
+                        <li><a href="">Speed Test</a></li> <br> 
+                           
+                    </ul>
+                </div>
+                <div class="ul-2">
+                    <ul >
+                        <li><a href="">Help Center</a></li><br>
+                        <li><a href="">Jobs</a></li><br>
+                        <li><a href="">Cookie Preferences</a></li><br>
+                        <li><a href="">Legal Notices</a></li><br>
+                    </ul>
+                </div>
+                <div class="ul-3">
+                    <ul >
+                        <li><a href="">Account</a></li><br>
+                        <li><a href="">Ways to Watch</a></li><br>
+                        <li><a href="">Corporate Information</a></li><br>
+                        <li><a href="">Only on Netflix</a></li><br>
+                    </ul>
+                </div>      
+             </div>
+             <!-- end-footer  -->
+              <div class="end-button" style="padding-left: 40px;">
+                <select name="" id="">
+                   <option value="">English</option>
+                   <option value="">हिन्दी</option>
+                </select>
+                <br><br><br>
+                <p style="font-size: 20px;"><span style="color: orange;">Netf</span><span>lix</span><span style="color: green;">India</span></p>
+              </div>
+             
+                
+             
+        </div>
+        <h1 style="color: white;">Created By: Sudheer Tiwari</h1>   
+    </div>
+    
+</body>
+
+</html>
